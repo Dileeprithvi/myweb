@@ -5,56 +5,42 @@
 	<groupId>in.dileeprithvi</groupId>
 	<artifactId>mywebapp</artifactId>
         <version>8.0.0</version>
-  <servers>
-    <server>
-      <username>admin</username>
-      <password>APME1nozX4DBH6RorpENeriQuU</password>
-      <id>central</id>
-    </server>
-    <server>
-      <username>admin</username>
-      <password>APME1nozX4DBH6RorpENeriQuU</password>
-      <id>snapshots</id>
-    </server>
-  </servers>
-  <profiles>
-    <profile>
-      <repositories>
-        <repository>
-          <snapshots>
-            <enabled>false</enabled>
-          </snapshots>
-          <id>central</id>
-          <name>libs-release</name>
-          <url>http://52.8.12.234:8081/artifactory/libs-release</url>
-        </repository>
-        <repository>
-          <snapshots />
-          <id>snapshots</id>
-          <name>libs-snapshot</name>
-          <url>http://52.8.12.234:8081/artifactory/libs-snapshot</url>
-        </repository>
-      </repositories>
-      <pluginRepositories>
-        <pluginRepository>
-          <snapshots>
-            <enabled>false</enabled>
-          </snapshots>
-          <id>central</id>
-          <name>libs-release</name>
-          <url>http://52.8.12.234:8081/artifactory/libs-release</url>
-        </pluginRepository>
-        <pluginRepository>
-          <snapshots />
-          <id>snapshots</id>
-          <name>libs-snapshot</name>
-          <url>http://52.8.12.234:8081/artifactory/libs-snapshot</url>
-        </pluginRepository>
-      </pluginRepositories>
-      <id>artifactory</id>
-    </profile>
-  </profiles>
-  <activeProfiles>
-    <activeProfile>artifactory</activeProfile>
-  </activeProfiles>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>	
+	<dependencies>
+
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+	
+	<distributionManagement>
+		 <snapshotRepository>
+		    <id>snapshots</id>
+		    <name>Dileep-snapshots</name>	
+		    <url>http://52.8.12.234:8081/artifactory/libs-snapshot-local</url>
+		 </snapshotRepository>
+		
+		<repository>
+		    <id>central</id>
+		    <name>Dileep-release</name>	
+		    <url>http://52.8.12.234:8081/artifactory/libs-release-local</url>
+		</repository>
+  	</distributionManagement>
+	
+	<pluginRepositories>
+	    <pluginRepository>    
+		<id>maven1</id>
+		<name>Maven.org</name>
+		<url>http://repo1.maven.org/maven2</url>
+	    </pluginRepository>
+	</pluginRepositories>
 </project>
