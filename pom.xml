@@ -35,6 +35,15 @@
 		</repository>
   	</distributionManagement>
 	
+	
+	<distributionManagement>
+   		 <snapshotRepository>
+        	    <id>snapshots</id>
+                    <name>ip-10-0-0-109.us-west-1.compute.internal-snapshots</name>
+                    <url>http://52.8.12.234:8081/artifactory/libs-snapshot-local</url>
+                 </snapshotRepository>
+       </distributionManagement>
+	
 	<pluginRepositories>
 	    <pluginRepository>    
 		<id>maven1</id>
